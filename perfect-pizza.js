@@ -4,8 +4,11 @@ module.exports = function perfectPizzas(){
 var smallPizza=0;
 var mediumPizza=0;
 var  largePizza=0;
-var pizzaCost = 0;
-actionList = [];
+var totaPizza = 0;
+
+let smallTotal = 0;
+let mediumTotal = 0; 
+let largeTotal = 0;
 
 
 function getSmall(){
@@ -21,45 +24,53 @@ function getMedium(){
     }
     function getLarge(){
 
-        return largePizza;
+        return totaPizza;
         
         }
 
         function getPizzaCost(){
 
-            return pizzaCost;
+            return totaPizza;
             
             }
 
             
-function addPizzas(pizzaType){
+function smallPizzaFun(pizzaType){
      
     if(pizzaType =="small"){
-        
-        pizzaCost += 31.99;
-        smallPizza  ++;
+        smallTotal +=  31.99
+        totaPizza += 31.99;
+        smallPizza++;
         
     }
-    else if(pizzaType == "medium"){
-        
-        pizzaCost+= 58.99;
-        mediumPizza ++;
+}
+
+function mediumPizzaFun(pizzaType){
+    if(pizzaType == "medium"){
+        mediumTotal +=58.99
+        totaPizza+= 58.99;
+        mediumPizza++;
     }
-    else if(pizzaType == "large"){
-        
-        pizzaCost +=  87.99;
-        largePizza ++;
+
+}
+   
+function largePizzaFun(pizzaType){
+    if(pizzaType == "large"){
+        largeTotal +=  87.99
+        totaPizza +=  87.99;
+        largePizza++;
     } 
    
-    
 }
+
+
 function pizzaOrder(order){
     if (order=== "orderPizza") {
         actionList.push({
             
             orderId: "#1",
             status:"paymentdue",
-            amount: pizzaCost
+            amount: totaPizza
 
             
         });
@@ -67,6 +78,18 @@ function pizzaOrder(order){
        
     }   
 
+}
+
+function getSmallPizza(){
+    return smallTotal
+}
+
+function getMediumPizza(){
+return mediumTotal;
+}
+
+function getLargePizza(){
+    return largeTotal;
 }
 
 function pizzaAction(){
@@ -81,7 +104,8 @@ function pizzaTotal(){
 
 
 return{
-    addPizzas,
+    getLargePizza,
+    largePizzaFun,
     getSmall,
     getLarge,
     getMedium,
@@ -89,6 +113,11 @@ return{
     pizzaOrder,
     pizzaTotal,
     getPizzaCost,
+    getMediumPizza,
+    getSmallPizza,
+    smallPizzaFun,
+    mediumPizzaFun
+
 }
 
 

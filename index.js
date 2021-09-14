@@ -34,6 +34,9 @@ app.use(bodyParser.json())
 app.get('/', function(req, res) {
 	res.render('index', {
 		// counter,
+		pizzaSmallTotal: pizzaPerfectType.getSmallPizza(),
+		pizzaMediumTotal : pizzaPerfectType.getMediumPizza(),
+        pizzaLargeTotal : pizzaPerfectType.getLargePizza(),
 	
 		pizzaSmall: pizzaPerfectType.getSmall(),
         pizzaMedium : pizzaPerfectType.getMedium(),
@@ -43,13 +46,38 @@ app.get('/', function(req, res) {
 	});
 });
 
-app.post('/count', function(req, res) {
+app.post('/small', function(req, res) {
 	// counter++;
-
-	const pizzaType =req.body.piz;
+console.log('dfdfdfdfdfdfd')
+	const pizzaType =req.body.small;
 	
 	console.log(pizzaType);
-	pizzaPerfectType.addPizzas(pizzaType)
+	pizzaPerfectType.smallPizzaFun(pizzaType)
+	
+	
+	res.redirect('/')
+});
+
+
+app.post('/medium', function(req, res) {
+	// counter++;
+
+	const pizzaType =req.body.medium;
+	
+	console.log(pizzaType);
+	pizzaPerfectType.mediumPizzaFun(pizzaType)
+	
+	
+	res.redirect('/')
+});
+
+app.post('/large', function(req, res) {
+	// counter++;
+
+	const pizzaType =req.body.large;
+	
+	console.log(pizzaType);
+	pizzaPerfectType.largePizzaFun(pizzaType)
 	
 	
 	res.redirect('/')
