@@ -19,3 +19,42 @@ body {
 	padding: 0.5em;
 	margin-bottom: 0.25em;
 }
+.pizza1{
+	height: 15em;
+	background-color: orange;
+	width: 10em;
+	padding: 2em;
+
+}
+.pizza1 img{
+	width: 1em;
+	height: 0.5em;
+}
+.pizza2{
+	height: 15em;
+	background-color:yellow;
+	width: 10em;
+	padding: 2em;
+    margin-left: 1%;
+}
+.pizza3{
+	height: 15em;
+	background-color:greenyellow;
+	width: 10em;
+	padding: 2em;
+	margin-left: 1%;
+
+}
+.pizzaSizes{
+	display: flex;
+}
+.Order{
+
+	background-color: honeydew;
+}
+.pizzaCart{
+	background-color: burlywood; 
+	width: 68.7%;
+	padding-bottom: 5%;
+	margin-bottom: 5%;
+}

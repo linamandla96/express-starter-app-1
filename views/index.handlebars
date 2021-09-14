@@ -2,14 +2,91 @@
 
 
 <div>
-    Start here
+    {{!-- Start here --}}
 
-    <form action="/count" method="post">
-        <div class="counter" >
-            {{counter}}
-        </div>    
-        <input type="submit" value="Press button to count">
-    
-    </form>
+    {{!-- <form action="/count" method="post"> --}}
+        <div class="counter">
+            {{body}}
+        </div>
+        {{!-- <input type="submit" value="Press button to count"> --}}
+        <h1>Perfect Pizza</h1>
+        <div class=" pizzaCart">
+            <h2> shopping Cart</h2>
+            <p>Small x {{pizzaSmall}}</p>
+            <p>Medium x {{pizzaMedium}}</p>
+            <p>Large x {{pizzalarge}}</p>
+            <p id="totalCost"> orderTotalCost : {{pizzaTotalCost}}</p>
+        
+        <button >ORDER</button>
+        
+        </div>
 
+        <div class="pizzaSizes">
+            <div class="pizza1">
+                <img src="pizza.png" alt="">
+                <h2>Large Pizza</h2>
+                <strong>R87.99</strong>
+
+                <div>
+                    medium margeritha pizza with 3 toppings max.
+                    2 or less meat topping.
+                    3 or less other toppings.
+                </div>
+                <form action="/count" method="POST">
+                    <label class="lar">
+                        <input type="button" name="piz" class="pizzaSize" value="large">
+                        <span class="label-body"></span>
+                    </label>
+
+                </form>
+            </div>
+
+
+
+            <div class="pizza2">
+                <img src="pizza.png" alt="">
+                <h2>Medium Pizza</h2>
+                <strong>R58.99</strong>
+
+                <div>
+                    medium margeritha pizza with 3 toppings max.
+                    2 or less meat topping.
+                    3 or less other toppings.
+                </div>
+
+                <form action="/count" method="POST">
+                    <label class="med">
+                        <input type="button" name="piz" class="pizzaSize" value="medium">
+                        <span class="label-body"></span>
+                    </label>
+                </form>
+            
+            </div>
+
+            <div class="pizza3">
+                <img src="pizza.png" alt="">
+                <h2>Small Pizza</h2>
+                <strong>R31.99</strong>
+
+                <div>
+                    medium margeritha pizza with 3 toppings max.
+                    1 meat topping.
+                    3 or less other toppings.
+                
+                </div>
+
+                <form action="/count" method="POST">
+                    <label class="sma">
+                        <input type="button" name="piz" class="pizzaSize" value="small">
+                        <span class="label-body"></span>
+                    </label>
+                
+                </form>
+
+            </div>
+
+
+
+        </div>
+    {{!-- </form> --}}
 </div>
